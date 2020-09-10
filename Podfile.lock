@@ -1,0 +1,27 @@
+PODS:
+  - LazoReports (0.1.0)
+  - Nimble (7.3.4)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - LazoReports (from `./`)
+  - Nimble (~> 7.0)
+  - Quick (~> 1.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  LazoReports:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  LazoReports: 6e8d5ac9754046818d9990ebb0c95c55d851f2a2
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 30d84822df9ab716b83d8fa7684af436032f5eb2
+
+COCOAPODS: 1.8.4
