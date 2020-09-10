@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LazoReports: 6e8d5ac9754046818d9990ebb0c95c55d851f2a2
+  LazoReports: ea2349ab77d137137ebef832ea4dd78ad916b844
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
