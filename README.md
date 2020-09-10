@@ -1,4 +1,4 @@
-# LazoReports [![CI Status](https://img.shields.io/travis/Cobixs/LazoReports.svg?style=flat)](https://travis-ci.org/Cobixs/LazoReports)
+# LazoReports [![CI Status](https://img.shields.io/travis/cobixs/LazoReports.svg?style=flat)](https://travis-ci.org/cobixs/LazoReports)
 
 ## Description
 
@@ -11,7 +11,7 @@ LazoReports is available on the private specs repo of cobixs
     1. Add the private specs repo if you never used it before
 
 ```ruby
-$ pod repo add CVD-Specs https://github.com/cobixs/ios-specs.git
+$ pod repo add CBX-Specs https://github.com/cobixs/ios-specs.git
 ```
 
     2. Add the specs repo to the `Podfile`
