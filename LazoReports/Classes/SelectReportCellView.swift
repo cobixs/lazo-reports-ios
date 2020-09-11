@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectReportCellView: UIView {
+class SelectReportCellView: UIControl {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -33,6 +33,35 @@ class SelectReportCellView: UIView {
 
     private func setUp() {
         loadNib()
+        setUpContentView()
+
+        setUpTouches()
+        continueImageView.image = ImageLoader().loadImage(name: .continueArrow)
+        titleLabel.adjustsFontSizeToFitWidth = true
+    }
+
+    private func setUpTouches () {
+        self.isUserInteractionEnabled = true
+        self.addTarget(self, action: #selector(onTouchDown), for: .touchDown)
+        self.addTarget(self, action: #selector(onTouchUp), for: .touchUpInside)
+        self.addTarget(self, action: #selector(onTouchUp), for: .touchUpOutside)
+
+    }
+
+    @objc private func onTouchDown() {
+        UIView.animate(withDuration: 0.2) {
+            self.contentView.backgroundColor = UIColor(red: 216/256, green: 216/256, blue: 216/256, alpha: 0.5)
+        }
+    }
+
+    @objc private func onTouchUp() {
+        UIView.animate(withDuration: 0.2) {
+            self.contentView.backgroundColor = .white
+        }
+    }
+
+    private func setUpContentView() {
+        self.contentView.isUserInteractionEnabled = false
         self.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -46,7 +75,6 @@ class SelectReportCellView: UIView {
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor(red: 241/256, green: 241/256, blue: 241/256, alpha: 1).cgColor
 
-        continueImageView.image = ImageLoader().loadImage(name: .continueArrow)
     }
 
     private func loadNib() {

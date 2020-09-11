@@ -31,7 +31,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CGn-Jm-Mqh">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CGn-Jm-Mqh">
                                     <rect key="frame" x="15" y="73" width="384" height="745"/>
                                 </stackView>
                             </subviews>

@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
 
         let selectReportViewController = SelectReportViewController()
+        selectReportViewController.modalPresentationStyle = .fullScreen
         present(selectReportViewController, animated: false, completion: nil)
     }
 

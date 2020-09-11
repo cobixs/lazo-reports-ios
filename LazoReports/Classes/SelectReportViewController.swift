@@ -36,8 +36,42 @@ public class SelectReportViewController: UIViewController {
 
     private func setUpStackView() {
         let grossMarginCell = SelectReportCellView(title: "Margen Bruto", image: ImageLoader().loadImage(name: .coins)!)
+        let personalExpenses = SelectReportCellView(title: "Gastos de personal", image: ImageLoader().loadImage(name: .farmer)!)
+        let strucutreExpenses = SelectReportCellView(title: "Gastos de estructura", image: ImageLoader().loadImage(name: .company)!)
+        let productionActivities = SelectReportCellView(title: "Produccion por actividad", image: ImageLoader().loadImage(name: .wheat)!)
+        let machinery = SelectReportCellView(title: "Maquinaria propia", image: ImageLoader().loadImage(name: .wheat2)!)
 
         cellStackView.addArrangedSubview(grossMarginCell)
+        cellStackView.addArrangedSubview(personalExpenses)
+        cellStackView.addArrangedSubview(strucutreExpenses)
+        cellStackView.addArrangedSubview(productionActivities)
+        cellStackView.addArrangedSubview(machinery)
+
+        grossMarginCell.addTarget(self, action: #selector(grossMarginTaped), for: .touchUpInside)
+        personalExpenses.addTarget(self, action: #selector(personalExpensesTaped), for: .touchUpInside)
+        strucutreExpenses.addTarget(self, action: #selector(strucutreExpensesTaped), for: .touchUpInside)
+        productionActivities.addTarget(self, action: #selector(productionActivitiesTaped), for: .touchUpInside)
+        machinery.addTarget(self, action: #selector(machineryTaped), for: .touchUpInside)
+    }
+
+    @objc private func grossMarginTaped(sender: SelectReportCellView) {
+        print("HELLO!")
+    }
+
+    @objc private func personalExpensesTaped(sender: SelectReportCellView) {
+        print("HELLO!")
+    }
+
+    @objc private func strucutreExpensesTaped(sender: SelectReportCellView) {
+        print("HELLO!")
+    }
+
+    @objc private func productionActivitiesTaped(sender: SelectReportCellView) {
+        print("HELLO!")
+    }
+
+    @objc private func machineryTaped(sender: SelectReportCellView) {
+        print("HELLO!")
     }
 
 }
