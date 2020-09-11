@@ -23,15 +23,7 @@ public class SelectReportViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setUpStackView()
-    }
-
-    private func loadImage(name: String) -> UIImage? {
-        let mainBundle = Bundle(for: type(of: self))
-        if let bundlePath = mainBundle.resourceURL?.appendingPathComponent("LazoReportsResources.bundle"), let resourcesBundle = Bundle(url: bundlePath) {
-            let image = UIImage(named: name, in: resourcesBundle, compatibleWith: nil)
-            return image
-        }
-        return nil
+        self.title = "Reportes"
     }
 
     private func setUpStackView() {
@@ -55,7 +47,7 @@ public class SelectReportViewController: UIViewController {
     }
 
     @objc private func grossMarginTaped(sender: SelectReportCellView) {
-        print("HELLO!")
+        navigationController?.pushViewController(SelectActivityViewController(), animated: true)
     }
 
     @objc private func personalExpensesTaped(sender: SelectReportCellView) {

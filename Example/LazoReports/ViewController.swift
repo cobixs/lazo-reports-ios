@@ -20,8 +20,10 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
 
         let selectReportViewController = SelectReportViewController()
-        selectReportViewController.modalPresentationStyle = .fullScreen
-        present(selectReportViewController, animated: false, completion: nil)
+        let navigationController = UINavigationController(rootViewController: selectReportViewController)
+
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
