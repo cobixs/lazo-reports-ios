@@ -24,6 +24,10 @@ public class SelectActivityViewController: UIViewController {
         super.viewDidLoad()
         setUpStackView()
         self.title = "Actividades"
+        let activitesService = ActivitiesService()
+        activitesService.getActivities() { (activities) in
+            print(activities)
+        }
     }
 
     private func setUpStackView() {

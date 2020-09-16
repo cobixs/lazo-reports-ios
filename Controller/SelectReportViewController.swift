@@ -24,6 +24,7 @@ public class SelectReportViewController: UIViewController {
         super.viewDidLoad()
         setUpStackView()
         self.title = "Reportes"
+        
     }
 
     private func setUpStackView() {
