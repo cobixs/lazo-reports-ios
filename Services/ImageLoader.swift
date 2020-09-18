@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ImageName: String {
     case activities = "activities"

@@ -11,6 +11,8 @@ public class SelectActivityViewController: UIViewController {
 
     @IBOutlet weak var cellStackView: UIStackView!
 
+    var activities: [ActivityModel] = []
+
     public override func loadView() {
         super.loadView()
 
@@ -22,21 +24,28 @@ public class SelectActivityViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setUpStackView()
+
         self.title = "Actividades"
         let activitesService = ActivitiesService()
-        activitesService.getActivities() { (activities) in
+        activitesService.getActivities { (activities) in
+            if let activities = activities {
+                self.activities = activities
+            }
             print(activities)
+            self.setUpStackView()
         }
+
     }
 
     private func setUpStackView() {
-        let activityCell = SelectReportCellView(title: "Cebada 2020", image: ImageLoader().loadImage(name: .farmer)!)
+        for activity in activities {
 
-        cellStackView.addArrangedSubview(activityCell)
+            let activityCell = SelectReportCellView(title: activity.name, image: ImageLoader().loadImage(name: .farmer)!)
 
-        activityCell.addTarget(self, action: #selector(activityTaped), for: .touchUpInside)
+            cellStackView.addArrangedSubview(activityCell)
 
+            activityCell.addTarget(self, action: #selector(activityTaped), for: .touchUpInside)
+        }
     }
 
     @objc private func activityTaped(sender: SelectReportCellView) {

@@ -22,13 +22,17 @@ class ActivitiesService {
         let task = URLSession.shared.dataTask(with: request) { (data, _, error ) in
             if let error = error {
                 print(error)
-                completitionHandler(nil)
+                DispatchQueue.main.async {
+                    completitionHandler(nil)
+                }
                 return
             }
 
             if let data = data {
                 let activites = try? JSONDecoder().decode([ActivityModel].self, from: data)
-                completitionHandler(activites)
+                DispatchQueue.main.async {
+                    completitionHandler(activites)
+                }
             }
         }
 
