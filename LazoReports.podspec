@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
 
   s.source_files = 'LazoReports/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'LazoReports' => ['LazoReports/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'LazoReportsResources' => ['LazoReports/Assets/images.xcassets']
+  }
 
   # s.dependency 'AFNetworking', '~> 2.3'
 end
